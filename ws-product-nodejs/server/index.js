@@ -1,10 +1,17 @@
 const express = require('express')
 const pg = require('pg')
-
 const app = express()
+// const router = express.Router()
+const limitCheck = require('./rateLimitApi/rateLimiter')
 // configs come from standard PostgreSQL env vars
 // https://www.postgresql.org/docs/9.6/static/libpq-envars.html
-const pool = new pg.Pool()
+const pool = new pg.Pool({
+  user: 'readonly',
+  host: 'work-samples-db.cx4wctygygyq.us-east-1.rds.amazonaws.com',
+  database: 'work_samples',
+  password: 'w2UIO@#bg532!',
+  port: 5432,
+})
 
 const queryHandler = (req, res, next) => {
   pool.query(req.sqlQuery).then((r) => {
@@ -12,59 +19,63 @@ const queryHandler = (req, res, next) => {
   }).catch(next)
 }
 
+// app.use('/api', router)
 app.get('/', (req, res) => {
   res.send('Welcome to EQ Works 😎')
 })
 
+app.use(limitCheck)
+
 app.get('/events/hourly', (req, res, next) => {
+  console.log("Cechking the req", req.headers.host)
   req.sqlQuery = `
-    SELECT date, hour, events
-    FROM public.hourly_events
-    ORDER BY date, hour
-    LIMIT 168;
+  SELECT date, hour, events
+  FROM hourly_events
+  ORDER BY date, hour
+  LIMIT 168;
   `
   return next()
 }, queryHandler)
 
 app.get('/events/daily', (req, res, next) => {
   req.sqlQuery = `
-    SELECT date, SUM(events) AS events
-    FROM public.hourly_events
-    GROUP BY date
-    ORDER BY date
-    LIMIT 7;
+  SELECT date, SUM(events) AS events
+  FROM public.hourly_events
+  GROUP BY date
+  ORDER BY date
+  LIMIT 7;
   `
   return next()
 }, queryHandler)
 
 app.get('/stats/hourly', (req, res, next) => {
   req.sqlQuery = `
-    SELECT date, hour, impressions, clicks, revenue
-    FROM public.hourly_stats
-    ORDER BY date, hour
-    LIMIT 168;
+  SELECT date, hour, impressions, clicks, revenue
+  FROM public.hourly_stats
+  ORDER BY date, hour
+  LIMIT 168;
   `
   return next()
 }, queryHandler)
 
 app.get('/stats/daily', (req, res, next) => {
   req.sqlQuery = `
-    SELECT date,
-        SUM(impressions) AS impressions,
-        SUM(clicks) AS clicks,
-        SUM(revenue) AS revenue
-    FROM public.hourly_stats
-    GROUP BY date
-    ORDER BY date
-    LIMIT 7;
+  SELECT date,
+  SUM(impressions) AS impressions,
+  SUM(clicks) AS clicks,
+  SUM(revenue) AS revenue
+  FROM public.hourly_stats
+  GROUP BY date
+  ORDER BY date
+  LIMIT 7;
   `
   return next()
 }, queryHandler)
 
 app.get('/poi', (req, res, next) => {
   req.sqlQuery = `
-    SELECT *
-    FROM public.poi;
+  SELECT *
+  FROM public.poi;
   `
   return next()
 }, queryHandler)
