@@ -1,0 +1,7 @@
+.homepage_buttons {
+  display: inline-flex;
+  width: 220px;
+  height: 110px;
+  padding-bottom: 3px;
+  color: white;
+}

@@ -1,7 +1,7 @@
 const express = require('express')
 const pg = require('pg')
 const app = express()
-// const router = express.Router()
+const router = express.Router()
 const limitCheck = require('./rateLimitApi/rateLimiter')
 // configs come from standard PostgreSQL env vars
 // https://www.postgresql.org/docs/9.6/static/libpq-envars.html
@@ -19,7 +19,7 @@ const queryHandler = (req, res, next) => {
   }).catch(next)
 }
 
-// app.use('/api', router)
+app.use('/api', router)
 app.get('/', (req, res) => {
   res.send('Welcome to EQ Works 😎')
 })

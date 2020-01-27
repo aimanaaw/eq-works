@@ -31,7 +31,7 @@ module.exports = (req, res, next) => {
           }
           data.count++
           redisClient.set(req.headers.host,JSON.stringify(data))
-          // next()
+          next()
         }
       })
     } else {

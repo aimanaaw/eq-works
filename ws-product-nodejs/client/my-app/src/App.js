@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './styles/homepageButtons.css';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         >
           Learn React
         </a>
+        <button
+        type="submit"
+        className="homepage_buttons"
+        ></button>
       </header>
     </div>
   );
