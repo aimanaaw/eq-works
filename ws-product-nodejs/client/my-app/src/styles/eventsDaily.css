@@ -1,0 +1,9 @@
+.events_daily_main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.events_view {
+  background-color: grey;
+}
