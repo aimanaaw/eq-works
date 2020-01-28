@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import axios from 'axios'
+import '../styles/eventsDaily.css'
 
-export default function eventsDaily() {
+export default function EventsDaily() {
   const [dailyEvent, setDailyEvent] = useState([])
 
 
   useEffect(() => {
-    axios.get('events/daily')
+    axios.get('/events/daily')
     .then((response) => {
-      const eventData = response
-      setDailyEvent(eventData)
-
+      console.log(response.rows)
+      setDailyEvent(response)
+    })
+    .catch(function(error) {
+      console.log(error)
     })
   }, [])
 
   return (
-    <div
+    <div className='events_view'>
+      <header className='events_daily_main'>
+      {dailyEvent}
+        <h1>Welcome to React</h1>
+      </header>
+
+    </div>
   )
 }

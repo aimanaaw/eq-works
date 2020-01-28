@@ -27,7 +27,6 @@ app.get('/', (req, res) => {
 app.use(limitCheck)
 
 app.get('/events/hourly', (req, res, next) => {
-  console.log("Cechking the req", req.headers.host)
   req.sqlQuery = `
   SELECT date, hour, events
   FROM hourly_events

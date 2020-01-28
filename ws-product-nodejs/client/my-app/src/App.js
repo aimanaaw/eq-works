@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './styles/homepageButtons.css';
+import Eventsdaily from './components/EventsDaily'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         className="homepage_buttons"
         ></button>
       </header>
+      <Eventsdaily/>
     </div>
   );
 }
