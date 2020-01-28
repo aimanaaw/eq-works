@@ -12,8 +12,8 @@ export default function EventsDaily() {
         // console.log(response.data)
         const eventData = response.data.map(eachEvent => {
           return {
-            date: eachEvent.date,
-            numberOfEvents: eachEvent.events
+            "date": eachEvent.date,
+            "numberOfEvents": eachEvent.events
           };
         });
         console.log(eventData);
