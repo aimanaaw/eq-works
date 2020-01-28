@@ -1,0 +1,34 @@
+.toolbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: grey;
+  background-size: 100% auto;
+  height: 72px;
+  z-index: 200;
+}
+
+.toolbar_navigation {
+  display: flex;
+  position: relative;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.toolbar_navigation_items a {
+  color: white;
+  text-decoration: none;
+}
+
+.toolbar_navigation_items ul {
+  list-style: none;
+  margin: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav_li {
+  padding: 0 0.5rem;
+}
