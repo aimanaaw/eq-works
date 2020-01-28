@@ -15,8 +15,8 @@ export default function StatsDaily() {
           "revenue": eachStat.revenue
         };
       });
-      console.log(eachStat);
-      setDailyStats(eachStat);
+      console.log("Testing Stats",eventData);
+      setDailyStats(eventData);
     })
     .catch(error => {
       console.log(error);

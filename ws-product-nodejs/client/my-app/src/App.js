@@ -4,6 +4,7 @@ import './App.css';
 import './styles/homepageButtons.css';
 import Eventsdaily from './components/EventsDaily'
 import EventHourly from './components/eventsHourly'
+import StatsDaily from './components/statsDaily'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       </header>
       <Eventsdaily/>
       <EventHourly/>
+      <StatsDaily/>
     </div>
   );
 }
