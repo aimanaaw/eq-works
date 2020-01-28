@@ -26,7 +26,17 @@ export default function StatsHourly() {
 
   return (
     <div>
-      {hourlyStats}
+      {hourlyStats.map(stat => {
+        return (
+          <div>
+            {stat.date}<br/>
+            {stat.hour}<br/>
+            {stat.impressions}<br/>
+            {stat.clicks}<br/>
+            {stat.revenue}<br/>
+            </div>
+        )
+      })}
     </div>
   )
 }
