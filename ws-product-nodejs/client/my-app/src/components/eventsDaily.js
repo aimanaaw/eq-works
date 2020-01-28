@@ -7,7 +7,7 @@ export default function EventsDaily() {
 
 
   useEffect(() => {
-    axios.get('/events/daily')
+    axios.get('http://localhost:5555/events/daily')
     .then((response) => {
       console.log(response.rows)
       setDailyEvent(response)
