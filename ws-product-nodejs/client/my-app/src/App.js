@@ -5,6 +5,7 @@ import './styles/homepageButtons.css';
 import Eventsdaily from './components/EventsDaily'
 import EventHourly from './components/eventsHourly'
 import StatsDaily from './components/statsDaily'
+import StatsHourly from './components/statsHourly'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Eventsdaily/>
       <EventHourly/>
       <StatsDaily/>
+      <StatsHourly/>
     </div>
   );
 }
