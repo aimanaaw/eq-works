@@ -1,11 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
+import {BrowserRouter, Link, Route} from "react-router-dom";
 import './App.css';
 import './styles/homepageButtons.css';
-import Eventsdaily from './components/EventsDaily'
+import EventsDaily from './components/EventsDaily'
 import EventHourly from './components/eventsHourly'
 import StatsDaily from './components/statsDaily'
 import StatsHourly from './components/statsHourly'
+
+const routes = [
+  {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily}
+]
 
 function App() {
   return (
@@ -27,11 +32,20 @@ function App() {
         type="submit"
         className="homepage_buttons"
         ></button>
+      <BrowserRouter>
+      <ul>
+      <li><Link to="/events/daily" className="App-link">Events Daily</Link></li>
+      </ul>
+      <div className="App-link">
+        <Route path="/events/daily" component={EventsDaily}></Route>
+      </div>
+      </BrowserRouter>
       </header>
-      <Eventsdaily/>
-      <EventHourly/>
+      
+      {/* <EventsDaily/> */}
+      {/* <EventHourly/>
       <StatsDaily/>
-      <StatsHourly/>
+      <StatsHourly/> */}
     </div>
   );
 }
