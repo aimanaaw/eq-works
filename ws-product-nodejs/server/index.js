@@ -1,5 +1,6 @@
 const express = require('express')
 const pg = require('pg')
+const cors = require('cors')
 const app = express()
 const router = express.Router()
 const limitCheck = require('./rateLimitApi/rateLimiter')
@@ -19,6 +20,7 @@ const queryHandler = (req, res, next) => {
   }).catch(next)
 }
 
+app.use(cors())
 app.use('/api', router)
 app.get('/', (req, res) => {
   res.send('Welcome to EQ Works 😎')
