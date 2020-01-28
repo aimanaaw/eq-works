@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import './styles/homepageButtons.css';
 import Eventsdaily from './components/EventsDaily'
+import EventHourly from './components/eventsHourly'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         ></button>
       </header>
       <Eventsdaily/>
+      <EventHourly/>
     </div>
   );
 }

@@ -20,6 +20,20 @@ export default function EventsHourly() {
     .catch((error)=> {
       console.log(error)
     });
-  }, [])
+  }, []);
+
+  return (
+    <div>
+      {hourlyEvent.map(event => {
+        return (
+          <div>
+            {event.date}<br/>
+            {event.hour}<br/>
+            {event.numberOfEvents}<br/>
+            </div>
+        )
+      })}
+    </div>
+  )
 
 }

@@ -31,7 +31,7 @@ export default function EventsDaily() {
           <div className="events_view">
             {event.date}
             <br />
-            {event.events}
+            {event.numberOfEvents}
             <br />
           </div>
         );
