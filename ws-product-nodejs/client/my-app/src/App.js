@@ -7,6 +7,7 @@ import EventsDaily from './components/EventsDaily'
 import EventHourly from './components/eventsHourly'
 import StatsDaily from './components/statsDaily'
 import StatsHourly from './components/statsHourly'
+import Navbar from './components/navbar'
 
 const routes = [
   {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily}
@@ -15,6 +16,7 @@ const routes = [
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -28,24 +30,9 @@ function App() {
         >
           Learn React
         </a>
-        <button
-        type="submit"
-        className="homepage_buttons"
-        ></button>
-      <BrowserRouter>
-      <ul>
-      <li><Link to="/events/daily" className="App-link">Events Daily</Link></li>
-      </ul>
-      <div className="App-link">
-        <Route path="/events/daily" component={EventsDaily}></Route>
-      </div>
-      </BrowserRouter>
-      </header>
+
       
-      {/* <EventsDaily/> */}
-      {/* <EventHourly/>
-      <StatsDaily/>
-      <StatsHourly/> */}
+      </header>
     </div>
   );
 }
