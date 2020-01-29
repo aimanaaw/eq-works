@@ -1,0 +1,21 @@
+.poi_main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: black;
+}
+
+.poi_view {
+  background-color:black;
+}
+
+.poi_table {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+ }
+
+ .poi_header {
+  margin-top: 100px;;
+}
+

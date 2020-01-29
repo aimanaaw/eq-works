@@ -5,13 +5,14 @@ import EventsDaily from './EventsDaily'
 import EventsHourly from './EventsHourly'
 import StatsDaily from './StatsDaily'
 import StatsHourly from './StatsHourly'
+import Poi from './Poi'
 
 const routes = [
   {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily},
   {path: '/events/hourly', name: 'EventsHourly', Component: EventsHourly},
   {path: '/stats/daily', name: 'StatsDaily', Component: StatsDaily},
   {path: '/stats/hourly', name: 'StatsHourly', Component: StatsHourly},
-  {path: '/stats/hourly', name: 'StatsHourly', Component: StatsHourly}
+  {path: '/poi', name: 'Poi', Component: Poi}
 ]
 
 export default function Navbar(props) {
@@ -34,6 +35,8 @@ export default function Navbar(props) {
   path="/stats/daily" component={StatsDaily}></Route>
   <Route
   path="/stats/hourly" component={StatsHourly}></Route>
+  <Route
+  path="/poi" component={Poi}></Route>
       </div>
       </BrowserRouter>
     </div>
