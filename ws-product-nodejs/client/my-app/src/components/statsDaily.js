@@ -43,7 +43,6 @@ export default function StatsDaily() {
         <Line type="monotone" dataKey="impressions*100" stroke="#F27EA1" />
         <Line type="monotone" dataKey="clicks" stroke="#61C7C9" />
       </ComposedChart>
-     
     </div>
     </div>
   )

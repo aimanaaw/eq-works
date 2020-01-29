@@ -7,7 +7,10 @@ import StatsDaily from './StatsDaily'
 import StatsHourly from './StatsHourly'
 
 const routes = [
-  {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily}
+  {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily},
+  {path: '/events/hourly', name: 'EventsHourly', Component: EventsHourly},
+  {path: '/stats/daily', name: 'StatsDaily', Component: StatsDaily},
+  {path: '/stats/hourly', name: 'StatsHourly', Component: StatsHourly}
 ]
 
 export default function Navbar(props) {
