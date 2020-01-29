@@ -39,8 +39,8 @@ export default function StatsHourly() {
 
   return (
 <div>
-      <h1>Hourly Stats</h1>
-      <div className="stats_daily_chart">
+  <h1 className="stats_header">Hourly Stats</h1>
+      <div className="stats_hourly_chart">
         <ComposedChart
           width={1500}
           height={600}

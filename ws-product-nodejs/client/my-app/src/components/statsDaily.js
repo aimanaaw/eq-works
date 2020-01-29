@@ -38,7 +38,7 @@ export default function StatsDaily() {
 
   return (
     <div>
-      <h1>Daily Stats</h1>
+      <h1 className="stats_header">Daily Stats</h1>
       <div className="stats_daily_chart">
         <ComposedChart
           width={1200}

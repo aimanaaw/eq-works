@@ -12,8 +12,12 @@
 .events_daily_chart {
   display: flex;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 10%;
  }
+
+ .events_header {
+  margin-top: 100px;;
+}
 
  .events_daily {
   height: 100vh;

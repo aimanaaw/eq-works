@@ -32,9 +32,7 @@ export default function EventsDaily() {
 
   return (
     <div>
-      <header>
-        <h1>Daily Events</h1>
-      </header>
+        <h1 className="events_header">Daily Events</h1>
     <div className="events_daily_chart">
       <LineChart width={1200} height={500} data={dailyEvent}
       margin={{ top: 5, right: 5, left: 20, bottom: 5 }} >

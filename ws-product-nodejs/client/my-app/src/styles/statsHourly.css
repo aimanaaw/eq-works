@@ -9,10 +9,15 @@
   background-color:black;
 }
 
+.stats_header {
+  margin-top: 100px;;
+}
+
 .stats_hourly_chart {
+  border-top: 10px;
   display: flex;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 10%;
  }
 
  .stats_hourly {
