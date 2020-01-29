@@ -2,9 +2,9 @@ import React from "react";
 import {BrowserRouter, Link, Route} from "react-router-dom";
 import '../styles/navbar.css';
 import EventsDaily from './EventsDaily'
-import EventsHourly from './eventsHourly'
-import StatsDaily from './statsDaily'
-import StatsHourly from './statsHourly'
+import EventsHourly from './EventsHourly'
+import StatsDaily from './StatsDaily'
+import StatsHourly from './StatsHourly'
 
 const routes = [
   {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily}

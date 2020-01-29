@@ -1,0 +1,21 @@
+.events_hourly_main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: black;
+}
+
+.events_view {
+  background-color:black;
+}
+
+.events_hourly_chart {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+ }
+
+ .events_hourly {
+  height: 100vh;
+  overflow: scroll;
+}

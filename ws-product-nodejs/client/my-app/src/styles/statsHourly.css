@@ -1,0 +1,21 @@
+.stats_hourly_main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: black;
+}
+
+.stats_view {
+  background-color:black;
+}
+
+.stats_hourly_chart {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+ }
+
+ .stats_hourly {
+  height: 100vh;
+  overflow: scroll;
+}

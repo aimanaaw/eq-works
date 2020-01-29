@@ -4,10 +4,10 @@ import {BrowserRouter, Link, Route} from "react-router-dom";
 import './App.css';
 import './styles/homepageButtons.css';
 import EventsDaily from './components/EventsDaily'
-import EventHourly from './components/eventsHourly'
-import StatsDaily from './components/statsDaily'
-import StatsHourly from './components/statsHourly'
-import Navbar from './components/navbar'
+import EventHourly from './components/EventsHourly'
+import StatsDaily from './components/StatsDaily'
+import StatsHourly from './components/StatsHourly'
+import Navbar from './components/Navbar'
 
 
 function App() {

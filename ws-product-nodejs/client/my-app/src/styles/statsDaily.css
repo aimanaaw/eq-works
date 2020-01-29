@@ -1,0 +1,21 @@
+.stats_daily_main {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: black;
+}
+
+.stats_view {
+  background-color:black;
+}
+
+.stats_daily_chart {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+ }
+
+ .stats_daily {
+  height: 100vh;
+  overflow: scroll;
+}

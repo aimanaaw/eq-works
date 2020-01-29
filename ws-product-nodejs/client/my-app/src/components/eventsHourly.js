@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../styles/eventsHourly.css";
+import { Barchart, Bar, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend} from 'recharts';
+import moment from 'moment';
 
 export default function EventsHourly() {
   const [hourlyEvent, setHourlyEvent] = useState([]);
@@ -9,7 +12,7 @@ export default function EventsHourly() {
     .then(response => {
       const eventData = response.data.map(eachEvent => {
         return {
-          "date": eachEvent.date,
+          "date": moment.utc(eachEvent.date).format('MM/DD/YYYY'),
           "hour": eachEvent.hour,
           "numberOfEvents": eachEvent.events
         };
@@ -23,16 +26,23 @@ export default function EventsHourly() {
   }, []);
 
   return (
-    <div>
-      {hourlyEvent.map(event => {
-        return (
-          <div>
-            {event.date}<br/>
-            {event.hour}<br/>
-            {event.numberOfEvents}<br/>
-            </div>
-        )
-      })}
+<div>
+      <header>
+        <h1>Hourly Events</h1>
+      </header>
+    <div className="events_hourly_chart">
+      <LineChart width={1500} height={500} data={hourlyEvent}
+      margin={{ top: 5, right: 5, left: 20, bottom: 5 }} >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" padding={{ left: 30, right: 30 }}/>
+        <YAxis type="number" domain={[0, 30]}/>
+        <Tooltip />
+        <Legend />
+        <Line type="monotone" dataKey="numberOfEvents" stroke="#F27EA1" />
+        <Line type="monotone" dataKey="hour" stroke="#61C7C9" />
+      </LineChart>
+     
+    </div>
     </div>
   )
 
