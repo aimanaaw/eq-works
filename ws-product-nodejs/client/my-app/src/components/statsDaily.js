@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/statsDaily.css";
-import { Barchart, Bar, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend} from 'recharts';
+import { ComposedChart, Bar, Line, CartesianGrid, Area, XAxis, YAxis, Tooltip, Legend} from 'recharts';
 import moment from 'moment';
 
 export default function StatsDaily() {
@@ -12,7 +12,7 @@ export default function StatsDaily() {
     .then(response => {
       const eventData = response.data.map(eachStat => {
         return {
-          "date": eachStat.date,
+          "date": moment.utc(eachStat.date).format('MM/DD/YYYY'),
           "impressions": eachStat.impressions,
           "clicks": eachStat.clicks,
           "revenue": eachStat.revenue
