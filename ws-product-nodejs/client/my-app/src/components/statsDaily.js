@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../styles/statsDaily.css";
+import { Barchart, Bar, LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend} from 'recharts';
+import moment from 'moment';
 
 export default function StatsDaily() {
   const [dailyStats, setDailyStats] = useState([]);
