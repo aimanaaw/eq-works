@@ -5,5 +5,16 @@
 }
 
 .events_view {
-  background-color:blue;
+  background-color:whitesmoke;
+}
+
+.events_daily_chart {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+ }
+
+ .events_daily {
+  height: 100vh;
+  overflow: scroll;
 }

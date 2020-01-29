@@ -2,6 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/eventsDaily.css";
 
+
+import ReactDOM from 'react-dom';
+import * as serviceWorker from '../serviceWorker';
+
+
+
+
+
 export default function EventsDaily() {
   const [dailyEvent, setDailyEvent] = useState([]);
 
@@ -39,3 +47,4 @@ export default function EventsDaily() {
     </div>
   );
 }
+

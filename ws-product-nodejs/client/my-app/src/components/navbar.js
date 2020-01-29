@@ -16,7 +16,7 @@ export default function Navbar(props) {
       <BrowserRouter>
       <div>
         <li>
-          <Link to="/events/daily" className="nav_li">Events Daily<Route
+          <Link to="/events/daily" className="toolbar_navigation">Events Daily<Route
   path="/events/daily" component={EventsDaily}></Route></Link>
         </li>
       </div>
