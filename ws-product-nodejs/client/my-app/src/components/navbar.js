@@ -31,7 +31,7 @@ export default function Navbar(props) {
   <Route
   path="/stats/daily" component={StatsDaily}></Route>
   <Route
-  path="/stats/daily" component={StatsHourly}></Route>
+  path="/stats/hourly" component={StatsHourly}></Route>
       </div>
       </BrowserRouter>
     </div>

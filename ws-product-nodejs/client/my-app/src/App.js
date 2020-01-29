@@ -3,10 +3,6 @@ import logo from './logo.svg';
 import {BrowserRouter, Link, Route} from "react-router-dom";
 import './App.css';
 import './styles/homepageButtons.css';
-import EventsDaily from './components/EventsDaily'
-import EventHourly from './components/EventsHourly'
-import StatsDaily from './components/StatsDaily'
-import StatsHourly from './components/StatsHourly'
 import Navbar from './components/Navbar'
 
 
