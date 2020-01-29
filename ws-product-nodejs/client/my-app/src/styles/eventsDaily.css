@@ -2,16 +2,17 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
+  background-color: black;
 }
 
 .events_view {
-  background-color:whitesmoke;
+  background-color:black;
 }
 
 .events_daily_chart {
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 20%;
  }
 
  .events_daily {

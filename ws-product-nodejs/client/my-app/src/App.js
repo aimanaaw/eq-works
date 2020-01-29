@@ -9,15 +9,12 @@ import StatsDaily from './components/statsDaily'
 import StatsHourly from './components/statsHourly'
 import Navbar from './components/navbar'
 
-const routes = [
-  {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily}
-]
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -32,7 +29,7 @@ function App() {
         </a>
 
       
-      </header>
+      </header> */}
     </div>
   );
 }

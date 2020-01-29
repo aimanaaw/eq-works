@@ -2,9 +2,9 @@ import React from "react";
 import {BrowserRouter, Link, Route} from "react-router-dom";
 import '../styles/navbar.css';
 import EventsDaily from './EventsDaily'
-// import EventHourly from './components/eventsHourly'
-// import StatsDaily from './components/statsDaily'
-// import StatsHourly from './components/statsHourly'
+import EventsHourly from './eventsHourly'
+import StatsDaily from './statsDaily'
+import StatsHourly from './statsHourly'
 
 const routes = [
   {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily}
@@ -15,10 +15,20 @@ export default function Navbar(props) {
     <div className="toolbar">
       <BrowserRouter>
       <div>
-        <li>
-          <Link to="/events/daily" className="toolbar_navigation">Events Daily<Route
-  path="/events/daily" component={EventsDaily}></Route></Link>
-        </li>
+          <Link to="/events/daily" className="toolbar_navigation">Events Daily</Link>
+          <Link to="/events/hourly" className="toolbar_navigation">Events Hourly</Link>
+          <Link to="/stats/daily" className="toolbar_navigation">Stats Daily</Link>
+          <Link to="/stats/hourly" className="toolbar_navigation">Stats Hourly</Link>
+      </div>
+      <div>
+      <Route
+  path="/events/daily" component={EventsDaily}></Route>
+  <Route
+  path="/events/hourly" component={EventsHourly}></Route>
+  <Route
+  path="/stats/daily" component={StatsDaily}></Route>
+  <Route
+  path="/stats/daily" component={StatsHourly}></Route>
       </div>
       </BrowserRouter>
     </div>
