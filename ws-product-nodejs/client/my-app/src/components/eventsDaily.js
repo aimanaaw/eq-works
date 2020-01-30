@@ -14,15 +14,12 @@ export default function EventsDaily() {
     axios
       .get("http://localhost:5555/events/daily")
       .then(response => {
-        // console.log(response.data)
         const eventData = response.data.map(eachEvent => {
-          // console.log("Checking date", moment.utc(eachEvent.date).format('MM/DD/YYYY'))
           return {
             "date": moment.utc(eachEvent.date).format('MM/DD/YYYY'),
             "numberOfEvents": eachEvent.events
           };
         });
-        console.log(eventData[0].date);
         setDailyEvent(eventData);
       })
       .catch(function(error) {
@@ -42,7 +39,6 @@ export default function EventsDaily() {
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="numberOfEvents" stroke="#F27EA1" />
-        {/* <Line type="monotone" dataKey="Amount spent per day" stroke="#61C7C9" /> */}
       </LineChart>
      
     </div>

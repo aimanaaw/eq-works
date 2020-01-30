@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/poi.css";
 import {MDBDataTable} from 'mdbreact';
+import moment from 'moment';
 
 
 export default function Poi() {
@@ -16,7 +17,11 @@ export default function Poi() {
           "poi_id": eachPoi.poi_id,
           "name": eachPoi.name,
           "lat": eachPoi.lat,
-          "lon": eachPoi.lon
+          "lon": eachPoi.lon,
+          "date": moment.utc(eachPoi.date).format('MM/DD/YYYY'),
+          "impressions": eachPoi.impressions,
+          "clicks": eachPoi.clicks,
+          "revenue": eachPoi.revenue
         };
       });
       const columns = [
@@ -43,13 +48,42 @@ export default function Poi() {
           field: 'lon',
           sort: 'asc',
           width: 150
+        },
+        {
+          label: 'Date',
+          field: 'date',
+          sort: 'asc',
+          width: 150
+        },
+        // {
+        //   label: 'Events',
+        //   field: 'events',
+        //   sort: 'asc',
+        //   width: 150
+        // },
+        {
+          label: 'Impressions',
+          field: 'impressions',
+          sort: 'asc',
+          width: 150
+        },
+        {
+          label: 'Clicks',
+          field: 'clicks',
+          sort: 'asc',
+          width: 150
+        },
+        {
+          label: 'Revenue',
+          field: 'revenue',
+          sort: 'asc',
+          width: 150
         }
       ];
       const tableData = {
         "columns": columns,
         "rows": rows
       }
-      console.log("POI", tableData);
       setPointOfInterest(tableData);
     })
     .catch((error) => {

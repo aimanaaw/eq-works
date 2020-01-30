@@ -17,7 +17,6 @@ export default function EventsHourly() {
           "numberOfEvents": eachEvent.events
         };
       });
-      console.log("Each event in hourly events", eventData);
       setHourlyEvent(eventData);
     })
     .catch((error)=> {

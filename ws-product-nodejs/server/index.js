@@ -73,10 +73,10 @@ app.get('/stats/daily', (req, res, next) => {
   return next()
 }, queryHandler)
 
+
 app.get('/poi', (req, res, next) => {
   req.sqlQuery = `
-  SELECT *
-  FROM public.poi;
+  select poi.poi_id, poi.name, poi.lat, poi.lon, hourly_stats.date, impressions, clicks, revenue from poi join hourly_stats on poi.poi_id = hourly_stats.poi_id;
   `
   return next()
 }, queryHandler)
