@@ -1,11 +1,15 @@
+require('dotenv').config();
 const express = require('express')
 const pg = require('pg')
 const cors = require('cors')
 const app = express()
 const router = express.Router()
 const limitCheck = require('./rateLimitApi/rateLimiter')
+
 // configs come from standard PostgreSQL env vars
 // https://www.postgresql.org/docs/9.6/static/libpq-envars.html
+// const pool = new pg.Pool()
+
 const pool = new pg.Pool({
   user: 'readonly',
   host: 'work-samples-db.cx4wctygygyq.us-east-1.rds.amazonaws.com',
