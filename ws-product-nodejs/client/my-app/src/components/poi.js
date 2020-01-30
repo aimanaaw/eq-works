@@ -55,12 +55,6 @@ export default function Poi() {
           sort: 'asc',
           width: 150
         },
-        // {
-        //   label: 'Events',
-        //   field: 'events',
-        //   sort: 'asc',
-        //   width: 150
-        // },
         {
           label: 'Impressions',
           field: 'impressions',
