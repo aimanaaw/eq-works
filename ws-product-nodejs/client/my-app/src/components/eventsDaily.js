@@ -12,7 +12,7 @@ export default function EventsDaily() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5555/events/daily")
+      .get("https://test-eqworks.herokuapp.com/events/daily")
       .then(response => {
         const eventData = response.data.map(eachEvent => {
           return {
