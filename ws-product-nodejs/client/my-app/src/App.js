@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import {BrowserRouter, Link, Route} from "react-router-dom";
 import './App.css';
 import './styles/homepageButtons.css';
 import Navbar from './components/Navbar'

@@ -32,6 +32,7 @@ export default function StatsDaily() {
       })
       .catch(error => {
         console.log(error);
+        alert("Load API")
       });
   }, []);
 

@@ -13,6 +13,8 @@
   display: flex;
   justify-content: center;
   margin-top: 10%;
+  border: black;
+  background-color: grey;
  }
 
  .poi_header {
