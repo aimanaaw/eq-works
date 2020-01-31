@@ -10,4 +10,6 @@ I have used Recharts to create linecharts and composed charts and provide visual
 
 I have used material ui to create a table with a search and sort feature.
 
+Ther server side is deployed using Heroku while the client side is deployed using Netlify.
+
 The data provided could be manipulated and visualized with no restrictions. My charts and tables have been designed to provide the most meaningful display of all the data while displaying my ability to create such UI components within the time frame provided.
