@@ -85,6 +85,13 @@ app.get('/poi', (req, res, next) => {
   return next()
 }, queryHandler)
 
+app.get('/maps', (req, res, next) => {
+  req.sqlQuery = `
+  select poi.name, poi.lat, poi.lon, SUM(events) AS events from public.hourly_events join poi on poi.poi_id = public.hourly_events.poi_id group by poi.name, poi.lat, poi.lon order by poi.name;
+  `
+  return next()
+}, queryHandler)
+
 app.listen(process.env.PORT || 5555, (err) => {
   if (err) {
     console.error(err)
