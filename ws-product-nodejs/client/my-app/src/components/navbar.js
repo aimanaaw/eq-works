@@ -6,7 +6,7 @@ import EventsHourly from './EventsHourly'
 import StatsDaily from './StatsDaily'
 import StatsHourly from './StatsHourly'
 import Poi from './Poi'
-import Homepage from './Homepage'
+import Maps from './Maps'
 
 const routes = [
   {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily},
@@ -40,7 +40,7 @@ export default function Navbar(props) {
   <Route
   path="/poi" component={Poi}></Route>
     <Route
-  path="/maps" component={Homepage}></Route>
+  path="/maps" component={Maps}></Route>
       </div>
       </BrowserRouter>
     </div>

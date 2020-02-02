@@ -1,9 +1,15 @@
-import React from 'react';
-import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps';
 
 function Map() {
+  const [mapData, setMapData] = useState([]);
+
+  
   return (
-    <GoogleMap defaultZoom={10} defaultCenter={{lat: 43.655676, lng: -79.396034}} />
+    <GoogleMap defaultZoom={10} defaultCenter={{lat: 43.655676, lng: -79.396034}} >
+
+    </GoogleMap>
   );
 }
 
