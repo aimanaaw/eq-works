@@ -19,15 +19,22 @@ function Map() {
       });
       console.log("testing axios call", eachPoi)
       setMapData(eachPoi);
+      console.log("MAP DATA", mapData)
     })
     .catch((error)=> {
-      console.log(error)
+      console.log("Error in the maps endpoint", error)
     });
   }, []);
 
   
   return (
     <GoogleMap defaultZoom={10} defaultCenter={{lat: 43.655676, lng: -79.396034}} >
+      {mapData.map(eachPlace => (
+        <Marker
+        key={eachPlace.name}
+        position={{ lat: eachPlace.lat, lng: eachPlace.lon}}
+        />
+      ))}
 
     </GoogleMap>
   );
