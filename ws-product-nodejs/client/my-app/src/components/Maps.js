@@ -1,9 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps';
 
 function Map() {
   const [mapData, setMapData] = useState([]);
+
+  useEffect (() => {
+    axios.get("https://test-eqworks.herokuapp.com/maps")
+    .then(response => {
+      const eachPoi = response.data.map(eachLocation => {
+        return {
+          "name": eachLocation.name,
+          "lat": eachLocation.lat,
+          "lon": eachLocation.lon,
+          "NEvents": eachLocation.events
+        };
+      });
+      console.log("testing axios call", eachPoi)
+      setMapData(eachPoi);
+    })
+    .catch((error)=> {
+      console.log(error)
+    });
+  }, []);
 
   
   return (
