@@ -18,7 +18,8 @@ export default function StatsDaily() {
 
   useEffect(() => {
     axios
-      .get("https://test-eqworks.herokuapp.com/stats/daily")
+    axios.get("https://localhost:5555/stats/daily")
+      // .get("https://test-eqworks.herokuapp.com/stats/daily")
       .then(response => {
         const eventData = response.data.map(eachStat => {
           return {

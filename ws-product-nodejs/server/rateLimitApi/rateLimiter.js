@@ -1,8 +1,8 @@
 const redis = require('redis')
-// const redisClient = redis.createClient({
-//   localhost: 5555
-// })
-const redisClient = redis.createClient(process.env.REDISCLOUD_URL, {no_ready_check: true});
+const redisClient = redis.createClient({
+  localhost: 5555
+})
+// const redisClient = redis.createClient(process.env.REDISCLOUD_URL, {no_ready_check: true});
 const moment = require('moment')
 
 module.exports = (req, res, next) => {

@@ -18,7 +18,8 @@ export default function StatsHourly() {
 
   useEffect(() => {
     axios
-    .get("https://test-eqworks.herokuapp.com/stats/hourly")
+    axios.get("https://localhost:5555/stats/hourly")
+    // .get("https://test-eqworks.herokuapp.com/stats/hourly")
     .then(response => {
       const statData = response.data.map(eachStat => {
         return {
