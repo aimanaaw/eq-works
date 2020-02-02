@@ -6,6 +6,7 @@ import EventsHourly from './EventsHourly'
 import StatsDaily from './StatsDaily'
 import StatsHourly from './StatsHourly'
 import Poi from './Poi'
+import Homepage from './Homepage'
 
 const routes = [
   {path: '/events/daily', name: 'EventsDaily', Component: EventsDaily},
@@ -25,6 +26,7 @@ export default function Navbar(props) {
           <Link to="/stats/daily" className="toolbar_navigation">Stats Daily</Link>
           <Link to="/stats/hourly" className="toolbar_navigation">Stats Hourly</Link>
           <Link to="/poi" className="toolbar_navigation">Point of Interest</Link>
+          <Link to="/" className="toolbar_navigation">Homepage</Link>
       </div>
       <div>
       <Route
@@ -37,6 +39,8 @@ export default function Navbar(props) {
   path="/stats/hourly" component={StatsHourly}></Route>
   <Route
   path="/poi" component={Poi}></Route>
+    <Route
+  path="/" component={Homepage}></Route>
       </div>
       </BrowserRouter>
     </div>
