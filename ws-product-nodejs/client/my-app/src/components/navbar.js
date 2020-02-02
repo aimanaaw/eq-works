@@ -26,7 +26,7 @@ export default function Navbar(props) {
           <Link to="/stats/daily" className="toolbar_navigation">Stats Daily</Link>
           <Link to="/stats/hourly" className="toolbar_navigation">Stats Hourly</Link>
           <Link to="/poi" className="toolbar_navigation">Point of Interest</Link>
-          <Link to="/" className="toolbar_navigation">Homepage</Link>
+          <Link to="/maps" className="toolbar_navigation">Maps</Link>
       </div>
       <div>
       <Route
@@ -40,7 +40,7 @@ export default function Navbar(props) {
   <Route
   path="/poi" component={Poi}></Route>
     <Route
-  path="/" component={Homepage}></Route>
+  path="/maps" component={Homepage}></Route>
       </div>
       </BrowserRouter>
     </div>
