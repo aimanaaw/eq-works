@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import './styles/homepageButtons.css';
-import Navbar from './components/Navbar'
+import Navbar from './components/navbar'
 
 
 function App() {
