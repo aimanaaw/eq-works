@@ -8,8 +8,7 @@ export default function EventsHourly() {
   const [hourlyEvent, setHourlyEvent] = useState([]);
 
   useEffect (() => {
-    axios.get("https://localhost:5555/events/hourly")
-    // axios.get("https://test-eqworks.herokuapp.com/events/hourly")
+    axios.get("https://test-eqworks.herokuapp.com/events/hourly")
     .then(response => {
       const eventData = response.data.map(eachEvent => {
         return {
