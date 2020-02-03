@@ -10,8 +10,7 @@ export default function Poi() {
 
   useEffect (() => {
     axios
-    // .get("https://test-eqworks.herokuapp.com/poi")
-    .get("http://localhost:5555/poi")
+    .get("https://eqworks-takehome.herokuapp.com/poi")
     .then(response => {
       const rows = response.data.map(eachPoi => {
         return {

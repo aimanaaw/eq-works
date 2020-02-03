@@ -7,8 +7,7 @@ function Map() {
   const [selectedPoi, setSelectedPoi] = useState(null)
 
   useEffect (() => {
-    // axios.get("https://test-eqworks.herokuapp.com/maps")
-    axios.get("http://localhost:5555/maps")
+    axios.get("https://eqworks-takehome.herokuapp.com/maps")
     .then(response => {
       const eachPoi = response.data.map(eachLocation => {
         return {
