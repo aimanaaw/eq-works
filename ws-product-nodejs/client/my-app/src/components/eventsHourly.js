@@ -26,7 +26,7 @@ export default function EventsHourly() {
 
   return (
     <div>
-    <h1 className="events_header">Hourly Events</h1>
+    <h1>Hourly Events</h1>
     <div className="events_hourly_chart">
       <LineChart width={1500} height={500} data={hourlyEvent}
       margin={{ top: 5, right: 5, left: 20, bottom: 5 }} >
