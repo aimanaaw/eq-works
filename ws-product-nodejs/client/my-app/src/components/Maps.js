@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
 
 function Map() {
   const [mapData, setMapData] = useState([]);
+  const [selectedPoi, setSelectedPoi] = useState(null)
 
   useEffect (() => {
     // axios.get("https://test-eqworks.herokuapp.com/maps")
@@ -33,8 +34,21 @@ function Map() {
         <Marker
         key={eachPlace.name}
         position={{ lat: eachPlace.lat, lng: eachPlace.lon}}
+        onClick={() => {
+          setSelectedPoi(eachPlace)
+        }}
         />
       ))}
+      {selectedPoi && (
+        <InfoWindow
+        position={{ lat: selectedPoi.lat, lng: selectedPoi.lon}}
+        onCloseClick={() => {
+          setSelectedPoi(null)
+        }}
+        >
+          <div>Selected Poi</div>
+        </InfoWindow>
+      )}
 
     </GoogleMap>
   );
