@@ -21,12 +21,26 @@ export default function Navbar(props) {
     <div className="toolbar">
       <BrowserRouter>
       <div>
-          <Link to="/events/daily" className="toolbar_navigation">Events Daily</Link>
-          <Link to="/events/hourly" className="toolbar_navigation">Events Hourly</Link>
-          <Link to="/stats/daily" className="toolbar_navigation">Stats Daily</Link>
-          <Link to="/stats/hourly" className="toolbar_navigation">Stats Hourly</Link>
-          <Link to="/poi" className="toolbar_navigation">Point of Interest</Link>
+        <ul>
+          <li className="toolbar_button">
+          <Link to="/events/daily" className="toolbar_navigation">Daily Events</Link>
+          </li>
+          <li className="toolbar_button">
+          <Link to="/events/hourly" className="toolbar_navigation">Hourly Events</Link>
+          </li>
+          <li className="toolbar_button">
+          <Link to="/stats/daily" className="toolbar_navigation">Daily Statistics</Link>
+          </li>
+          <li className="toolbar_button">
+          <Link to="/stats/hourly" className="toolbar_navigation">Hourly Statistics</Link>
+          </li>
+          <li className="toolbar_button">
+          <Link to="/poi" className="toolbar_navigation">Points of Interest Table</Link>
+          </li>
+          <li className="toolbar_button">
           <Link to="/maps" className="toolbar_navigation">Maps</Link>
+          </li>
+        </ul>
       </div>
       <div>
       <Route

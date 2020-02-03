@@ -3,18 +3,27 @@
   width: 100%;
   top: 0;
   left: 0;
-  background-color:grey;
+  background-color:#eae0c8;
   background-size: 100% auto;
-  height: 200px;
+  height: 175px;
   z-index: 200;
 }
 
 .toolbar_navigation {
-  display: flex;
+  color: black;
+  text-decoration: none;
+  font-size: 1.1rem;
+
+  /* display: flex;
   position: relative;
   height: 100%;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1rem; */
+}
+
+.toolbar_button {
+  margin: 0.2rem 0;
+
 }
 
 .toolbar_navigation_items a {

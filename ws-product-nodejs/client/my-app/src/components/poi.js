@@ -15,41 +15,21 @@ export default function Poi() {
     .then(response => {
       const rows = response.data.map(eachPoi => {
         return {
-          "poi_id": eachPoi.poi_id,
           "name": eachPoi.name,
-          "lat": eachPoi.lat,
-          "lon": eachPoi.lon,
           "date": moment.utc(eachPoi.date).format('MM/DD/YYYY'),
           "impressions": eachPoi.impressions,
           "clicks": eachPoi.clicks,
-          "revenue": eachPoi.revenue
+          "revenue": Math.round(eachPoi.revenue)
         };
       });
       const columns = [
         {
-          label: 'poi_id',
-          field: 'poi_id',
-          sort: 'asc',
-          width: 150
-        },
-        {
           label: 'Name',
           field: 'name',
           sort: 'asc',
-          width: 270
+          width: 500
         },
-        {
-          label: 'Latitude',
-          field: 'lat',
-          sort: 'asc',
-          width: 150
-        },
-        {
-          label: 'Longitude',
-          field: 'lon',
-          sort: 'asc',
-          width: 150
-        },
+
         {
           label: 'Date',
           field: 'date',
@@ -57,22 +37,22 @@ export default function Poi() {
           width: 150
         },
         {
-          label: 'Impressions',
+          label: 'Total Impressions',
           field: 'impressions',
           sort: 'asc',
-          width: 150
+          width: 500
         },
         {
-          label: 'Clicks',
+          label: 'Total Clicks',
           field: 'clicks',
           sort: 'asc',
-          width: 150
+          width: 500
         },
         {
-          label: 'Revenue',
+          label: 'Total Revenue',
           field: 'revenue',
           sort: 'asc',
-          width: 150
+          width: 500
         }
       ];
       const tableData = {
@@ -92,7 +72,7 @@ export default function Poi() {
       of Interest</h1>
       <div className="poi_table">
       <MDBDataTable
-      striped
+      // striped
       bordered
       hover
       data={pointOfInterest}
