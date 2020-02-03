@@ -46,7 +46,10 @@ function Map() {
           setSelectedPoi(null)
         }}
         >
-          <div>Selected Poi</div>
+          <div>
+            <h2>{selectedPoi.name}</h2>
+            <p>Number of events happening:  {selectedPoi.NEvents}</p>
+          </div>
         </InfoWindow>
       )}
 
