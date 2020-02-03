@@ -80,7 +80,7 @@ app.get('/stats/daily', (req, res, next) => {
 
 app.get('/poi', (req, res, next) => {
   req.sqlQuery = `
-  select poi.poi_id, poi.name, poi.lat, poi.lon, hourly_stats.date, impressions, clicks, revenue from poi join hourly_stats on poi.poi_id = hourly_stats.poi_id;
+  select poi.name, hourly_stats.date, SUM(impressions) AS impressions, sum(clicks) AS clicks, SUM(revenue) AS revenue from poi join hourly_stats on poi.poi_id = hourly_stats.poi_id group by poi.name, hourly_stats.date order by hourly_stats.date;
   `
   return next()
 }, queryHandler)
