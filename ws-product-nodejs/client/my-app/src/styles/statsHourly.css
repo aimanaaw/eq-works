@@ -14,10 +14,9 @@
 }
 
 .stats_hourly_chart {
-  border-top: 10px;
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 5%;
  }
 
  .stats_hourly {
