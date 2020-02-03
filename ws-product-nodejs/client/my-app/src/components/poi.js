@@ -67,7 +67,7 @@ export default function Poi() {
 
   return (
     <div>
-      <h1 className="poi_header">Points 
+      <h1>Points 
       of Interest</h1>
       <div className="poi_table">
       <MDBDataTable
