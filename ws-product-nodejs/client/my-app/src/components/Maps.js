@@ -49,6 +49,8 @@ function Map() {
           <div>
             <h2>{selectedPoi.name}</h2>
             <p>Number of events happening:  {selectedPoi.NEvents}</p>
+            <p>Latitude: {selectedPoi.lat}</p>
+            <p>Longitude: {selectedPoi.lng}</p>
           </div>
         </InfoWindow>
       )}
